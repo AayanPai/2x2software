@@ -87,17 +87,18 @@
   const chips = $$('#chips button');
   const ro = { box: $('.readout'), idea: $('#ro-idea'), verdict: $('#ro-verdict'), note: $('#ro-note') };
   const quads = {
-    hl: ['Do it this week', 'Small effort, real payoff. These are rare, so we move fast.'],
-    hh: ['Build it properly', 'Worth the long haul. This is where real products come from.'],
-    ll: ['Weekend experiment', "Cheap and low stakes. Fun, but it won't carry a product."],
-    lh: ['Politely pass', 'A lot of work for not much. We write it down and walk away.'],
+    hl: ['Do it this week', 'Little work, big payoff. These are rare, so we jump on them.'],
+    hh: ['Build it properly', 'A lot of work, but worth it. This is where real products come from.'],
+    ll: ['Weekend experiment', "Little work, little payoff. Fun to try, but it won't become a product."],
+    lh: ['Politely pass', 'A lot of work for little payoff. We note it down and move on.'],
   };
-  const special = { 'A gaming journal': 'Worth the long haul. This is how Bifrost started.' };
-  let pos = { x: 80, y: 84 }, name = 'A gaming journal', current = '', swapTimer;
+  const special = { 'A gaming journal': 'A lot of work, but worth it. This is how Bifrost started.' };
+  let pos = { x: 80, y: 68 }, name = 'A gaming journal', current = '', swapTimer;
 
   const quadOf = ({ x, y }) => (y >= 50 ? 'h' : 'l') + (x >= 50 ? 'h' : 'l');
 
   function render(animate) {
+    if (animate) matrix.classList.add('moved');
     puck.style.left = pos.x + '%';
     puck.style.top = (100 - pos.y) + '%';
     const q = quadOf(pos);

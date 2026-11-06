@@ -10,7 +10,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css?v=6">
   <script>
     document.documentElement.classList.add('js');
     try {
@@ -87,34 +87,38 @@
   <section class="section wrap" id="idea">
     <div class="split">
       <div class="split-copy reveal">
-        <p class="eyebrow">[ How we decide ]</p>
-        <h2 class="h-lg">Every idea gets sorted on a 2×2.</h2>
-        <p class="body">It's where the name comes from and still how we choose what to build. How much is it worth, and how much work is it? Pick an idea, then drag the dot wherever you'd put it.</p>
+        <p class="eyebrow">[ How we pick what to build ]</p>
+        <h2 class="h-lg">Before we build anything, we ask two questions.</h2>
+        <p class="body"><strong>How much is it worth? And how much work is it?</strong> Where an idea lands on this grid decides what we do with it. Try it yourself: pick an idea below, or drag the dot anywhere on the grid.</p>
 
+        <p class="step">Pick an idea</p>
         <div class="chips" id="chips" role="radiogroup" aria-label="Example ideas">
-          <button type="button" role="radio" aria-checked="true"  data-x="80" data-y="84" data-name="A gaming journal">A gaming journal</button>
-          <button type="button" role="radio" aria-checked="false" data-x="22" data-y="78" data-name="A tool we'd use daily">A tool we'd use daily</button>
-          <button type="button" role="radio" aria-checked="false" data-x="26" data-y="16" data-name="Another to-do app">Another to-do app</button>
-          <button type="button" role="radio" aria-checked="false" data-x="86" data-y="20" data-name="A feature nobody asked for">A feature nobody asked for</button>
+          <button type="button" role="radio" aria-checked="true"  data-x="80" data-y="68" data-name="A gaming journal">A gaming journal</button>
+          <button type="button" role="radio" aria-checked="false" data-x="24" data-y="70" data-name="A tool we'd use daily">A tool we'd use daily</button>
+          <button type="button" role="radio" aria-checked="false" data-x="26" data-y="30" data-name="Another to-do app">Another to-do app</button>
+          <button type="button" role="radio" aria-checked="false" data-x="80" data-y="32" data-name="A feature nobody asked for">A feature nobody asked for</button>
         </div>
 
         <div class="readout" aria-live="polite">
           <p class="readout-idea" id="ro-idea">A gaming journal</p>
+          <p class="step">What we'd do with it</p>
           <p class="readout-verdict" id="ro-verdict">Build it properly</p>
-          <p class="readout-note" id="ro-note">Worth the long haul. This is how Bifrost started.</p>
+          <p class="readout-note" id="ro-note">A lot of work, but worth it. This is how Bifrost started.</p>
         </div>
       </div>
 
       <div class="matrix-wrap reveal">
-        <span class="axis ay">Value ↑</span>
+        <span class="axis ay-t">More valuable ↑</span>
+        <span class="axis ay-b">Less valuable</span>
         <div class="matrix" id="matrix">
-          <div class="q" data-q="hl"><b>Do it this week</b></div>
-          <div class="q" data-q="hh"><b>Build it properly</b></div>
-          <div class="q" data-q="ll"><b>Weekend experiment</b></div>
-          <div class="q" data-q="lh"><b>Politely pass</b></div>
+          <div class="q" data-q="hl"><b>Do it this week</b><span>Little work, big payoff</span></div>
+          <div class="q" data-q="hh"><b>Build it properly</b><span>Lots of work, big payoff</span></div>
+          <div class="q" data-q="ll"><b>Weekend experiment</b><span>Little work, little payoff</span></div>
+          <div class="q" data-q="lh"><b>Politely pass</b><span>Lots of work, little payoff</span></div>
           <button class="puck" id="puck" type="button" aria-label="Idea marker. Use arrow keys to move it."><span>2</span></button>
         </div>
-        <span class="axis ax">Effort →</span>
+        <span class="axis ax-l">← Less work</span>
+        <span class="axis ax-r">More work →</span>
       </div>
     </div>
   </section>
@@ -169,14 +173,14 @@
   <!-- PRINCIPLES -->
   <section class="section wrap" id="how">
     <div class="head reveal">
-      <p class="eyebrow">[ What we do ]</p>
-      <h2 class="h-lg">Ideas are good.<br><span>Useful products are better.</span></h2>
+      <p class="eyebrow">[ How we work ]</p>
+      <h2 class="h-lg">Four steps from idea to product.<br><span>We repeat them every time.</span></h2>
     </div>
     <div class="grid4">
-      <article class="cell reveal"><span class="n">01</span><h3>Start with a real need</h3><p>If we can't say who it's for and why they'd care, it doesn't get built.</p></article>
-      <article class="cell reveal"><span class="n">02</span><h3>Make it feel obvious</h3><p>The best interface is the one you stop noticing. We keep sanding until it is.</p></article>
-      <article class="cell reveal"><span class="n">03</span><h3>Ship, then learn</h3><p>Real people using the thing teach us more than any amount of planning.</p></article>
-      <article class="cell reveal"><span class="n">04</span><h3>Keep building</h3><p>A launch is a starting point. We refine what works and build on it.</p></article>
+      <article class="cell reveal"><span class="n">Step 01</span><h3>Start with an idea</h3><p>Sometimes it's a problem we noticed. Sometimes it's just a cool idea we can't stop thinking about. Either way, it has to be worth building.</p></article>
+      <article class="cell reveal"><span class="n">Step 02</span><h3>Keep it simple</h3><p>We build the smallest version that makes the idea real, then smooth it out until it feels obvious to use.</p></article>
+      <article class="cell reveal"><span class="n">Step 03</span><h3>Ship it early</h3><p>We put it in front of real people before it's perfect. Watching them use it teaches us more than planning ever does.</p></article>
+      <article class="cell reveal"><span class="n">Step 04</span><h3>Keep improving</h3><p>We fix what's rough and build on what works. A launch isn't the finish line. It's where the real work starts.</p></article>
     </div>
   </section>
 
@@ -193,7 +197,12 @@
         <h3>Bifrost</h3>
         <p>In public beta.</p>
       </a>
-      <button class="cell slot reveal" type="button"><span class="n">002</span><span class="face">Slot open</span><span class="back">Still on the whiteboard.</span></button>
+      <div class="cell slot cad reveal">
+        <span class="n">002</span>
+        <div class="cad-logo"><img src="assets/cadencely-logo.webp" alt="Cadencely" loading="lazy"></div>
+        <p>Social media content, on subscription.</p>
+        <span class="soon">Coming soon</span>
+      </div>
       <button class="cell slot reveal" type="button"><span class="n">003</span><span class="face">Slot open</span><span class="back">Not telling yet.</span></button>
       <button class="cell slot reveal" type="button"><span class="n">004</span><span class="face">Slot open</span><span class="back">Ask us later.</span></button>
     </div>
@@ -209,6 +218,6 @@
   <a class="up" href="#top">Back to top ↑</a>
 </footer>
 
-<script src="script.js"></script>
+<script src="script.js?v=4"></script>
 </body>
 </html>
