@@ -301,6 +301,51 @@ h1, h2, h3, p { margin: 0; }
 .soon { margin-top: auto; padding: 5px 12px; border-radius: 999px; border: 1px solid #3a3a37; font: 500 11px var(--mono); letter-spacing: .08em; text-transform: uppercase; color: #f4f4f0; }
 .soon::before { content: ""; display: inline-block; width: 6px; height: 6px; border-radius: 50%; background: var(--blue); margin-right: 8px; vertical-align: 1px; }
 
+/* ---------- cadencely page ---------- */
+.cad-hero { padding: 120px 0 56px; }
+.cad-banner { background: #000; border-radius: 8px; padding: clamp(28px, 6vw, 64px); margin: 4px 0 40px; display: flex; justify-content: center; }
+.cad-logo.big { width: min(100%, 520px); margin: 0; }
+.cad-hero .h-xl { font-size: clamp(36px, 6vw, 76px); }
+.btn-static { border-color: var(--line); color: var(--muted); cursor: default; }
+.btn-static .dot { margin-right: 0; }
+.g3 { grid-template-columns: repeat(3, 1fr); }
+.g3 .cell { min-height: 0; border-right: 1px solid var(--line); border-bottom: 0; }
+.g3 .cell:last-child { border-right: 0; }
+.plans3 .cell { gap: 14px; }
+.plan-for { min-height: 3.2em; }
+.price { font-size: 15px; color: var(--muted); margin-top: 6px; }
+.price strong { font-size: clamp(32px, 4vw, 44px); letter-spacing: -.04em; color: var(--ink); font-weight: 700; transition: color .5s; }
+.cell:hover .price strong { color: var(--bg); }
+.inc { list-style: none; margin: 8px 0 0; padding: 0; display: grid; gap: 6px; font-size: 15px; }
+.inc li::before { content: "✓"; margin-right: 10px; color: var(--blue); }
+.fine { color: var(--muted); font-size: 14px; margin-top: 18px; max-width: 40em; }
+.shots { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(20px, 3vw, 36px); }
+.shots figure { margin: 0; }
+.win { border: 1px solid var(--line); border-radius: 8px; overflow: hidden; background: var(--panel); }
+.win .screen-bar { border-bottom-color: var(--line); }
+.win .screen-bar i { border-color: var(--muted); }
+.win .screen-bar span { color: var(--muted); }
+.win img { width: 100%; height: auto; }
+.shots figcaption { margin-top: 14px; color: var(--muted); font-size: 15px; max-width: 28em; }
+.cad-end { display: flex; justify-content: space-between; align-items: center; gap: 28px; flex-wrap: wrap; }
+@media (max-width: 900px) {
+  .g3 { grid-template-columns: 1fr; }
+  .g3 .cell { border-right: 0; border-bottom: 1px solid var(--line); }
+  .g3 .cell:last-child { border-bottom: 0; }
+  .plan-for { min-height: 0; }
+  .shots { grid-template-columns: 1fr; }
+}
+@media (max-width: 640px) { .cad-hero { padding-top: 88px; } }
+
+.cad-feature { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(28px, 5vw, 72px); align-items: center; }
+.cad-feature .cad-banner { margin: 0; aspect-ratio: 1; align-items: center; transition: transform .6s var(--ease); }
+.cad-feature .cad-banner:hover { transform: scale(.985); }
+.cad-feature .cad-logo.big { width: min(100%, 360px); }
+.facts.mini { grid-template-columns: 1fr; margin: 26px 0 28px; max-width: 30em; }
+.facts.mini li { border-left: 0; padding: 12px 0; }
+.facts.mini li + li { border-top: 1px solid var(--line); }
+@media (max-width: 900px) { .cad-feature { grid-template-columns: 1fr; } .cad-feature .cad-banner { aspect-ratio: 16 / 9; } }
+
 /* ---------- footer ---------- */
 .foot { display: flex; justify-content: space-between; align-items: center; gap: 16px 28px; flex-wrap: wrap; margin-top: clamp(80px, 12vw, 150px); padding: 28px 0 40px; border-top: 1px solid var(--line); color: var(--muted); font-size: 14px; }
 .up { color: var(--ink); font-weight: 600; }
