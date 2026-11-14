@@ -129,7 +129,7 @@ h1, h2, h3, p { margin: 0; }
 .js .line:nth-child(2) > span { animation-delay: .12s; }
 @keyframes rise { to { transform: none; } }
 
-.hero-art { position: relative; aspect-ratio: 1; width: 100%; max-width: 480px; justify-self: end; }
+.hero-art { position: relative; aspect-ratio: 1; width: 100%; max-width: 380px; justify-self: end; }
 .rings { position: absolute; inset: 0; width: 100%; height: 100%; overflow: visible; }
 .ring { stroke: var(--ink); stroke-width: 1; vector-effect: non-scaling-stroke; stroke-dasharray: 1; stroke-dashoffset: 1; animation: draw 2.2s var(--ease) forwards; transform-origin: 200px 200px; }
 .r1 { opacity: .22; animation-delay: .2s; }
@@ -138,7 +138,7 @@ h1, h2, h3, p { margin: 0; }
 @keyframes draw { to { stroke-dashoffset: 0; } }
 .orbit { fill: var(--blue); opacity: 0; animation: fade 1s 1.6s forwards; }
 @keyframes fade { to { opacity: 1; } }
-.art-mark { position: absolute; inset: 22%; width: 56%; height: 56%; object-fit: contain; will-change: transform; }
+.art-mark { position: absolute; inset: 6%; width: 88%; height: 88%; object-fit: contain; will-change: transform; }
 .js .art-mark { opacity: 0; animation: pop 1.2s .35s var(--ease) forwards; }
 @keyframes pop { from { opacity: 0; scale: .86; } to { opacity: 1; scale: 1; } }
 .art-label { position: absolute; color: var(--muted); font-size: 10.5px; white-space: nowrap; }
@@ -361,7 +361,7 @@ h1, h2, h3, p { margin: 0; }
 /* ---------- responsive ---------- */
 @media (max-width: 900px) {
   .hero { grid-template-columns: 1fr; min-height: 0; padding-top: 108px; gap: 24px; }
-  .hero-art { justify-self: center; max-width: 340px; order: -1; }
+  .hero-art { justify-self: start; max-width: 200px; }
   .split { grid-template-columns: 1fr; }
   .matrix-wrap { justify-self: center; }
   .product-body { grid-template-columns: 1fr; }
@@ -396,3 +396,162 @@ h1, h2, h3, p { margin: 0; }
   *, *::before, *::after { animation-duration: .01ms !important; animation-delay: 0s !important; transition-duration: .01ms !important; }
   .orbit { display: none; }
 }
+
+/* ---------- friendlier labels ---------- */
+.tag, .eyebrow { font-family: var(--sans); font-size: 15px; letter-spacing: 0; text-transform: none; }
+.tag { gap: 8px; }
+
+/* ---------- Bifrost uses its own type: Chakra Petch, Manrope, JetBrains Mono ---------- */
+#bifrost .product { font-family: "Manrope", var(--sans); }
+#bifrost .product .h-lg, #bifrost .feats .t { font-family: "Chakra Petch", var(--sans); font-weight: 600; letter-spacing: -.01em; }
+#bifrost .product .h-lg { line-height: 1.08; }
+#bifrost .eyebrow, #bifrost .feats .n, #bifrost .screen-bar span { font-family: "JetBrains Mono", var(--mono); letter-spacing: .06em; font-size: 12px; text-transform: uppercase; }
+#bifrost .screen-bar span { text-transform: none; letter-spacing: .02em; }
+#bifrost .btn-light { font-family: "Chakra Petch", var(--sans); font-weight: 600; letter-spacing: .02em; }
+
+/* ---------- Cadencely uses its own type: Inter with Instrument Serif italics ---------- */
+.cad-page, #cadencely { font-family: "Inter", system-ui, sans-serif; }
+.cad-page .h-xl, .cad-page .h-lg, .cad-page h3, .cad-page .price strong,
+#cadencely .h-lg { font-family: "Inter", system-ui, sans-serif; font-weight: 600; letter-spacing: -.035em; }
+.cad-page .h-lg span, .cad-page .muted, #cadencely .h-lg span {
+  font-family: "Instrument Serif", Georgia, serif; font-style: italic; font-weight: 400; letter-spacing: -.01em; font-size: 1.08em;
+}
+.cad-page .tag, .cad-page .eyebrow, .cad-page .facts, .cad-page .n, #cadencely .eyebrow { font-family: "Inter", system-ui, sans-serif; text-transform: none; letter-spacing: 0; }
+.cad-page .facts { font-size: 14px; }
+.cad-page .btn { font-family: "Inter", system-ui, sans-serif; font-weight: 500; }
+#cadencely .facts { font-family: "Inter", system-ui, sans-serif; text-transform: none; letter-spacing: 0; font-size: 14px; }
+
+/* ---------- bolder headings ---------- */
+.h-xl { font-weight: 800; letter-spacing: -.055em; }
+.h-lg { font-weight: 700; letter-spacing: -.045em; }
+.cad-page .h-xl { font-weight: 700; letter-spacing: -.045em; }
+.cad-page .h-lg, #cadencely .h-lg { font-weight: 700; letter-spacing: -.045em; }
+
+/* =========================================================
+   Type: Apple / OpenAI / Anthropic style.
+   System sans (SF on Apple, Inter elsewhere), a quiet serif
+   accent, system mono. Bifrost and Cadencely keep their own.
+   ========================================================= */
+:root {
+  --sans: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Inter", "Segoe UI", system-ui, sans-serif;
+  --display: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Inter", "Segoe UI", system-ui, sans-serif;
+  --accent-serif: "Source Serif 4", "Tiempos Text", Georgia, serif;
+  --mono: ui-monospace, "SF Mono", "JetBrains Mono", Menlo, Consolas, monospace;
+    --shu: #d0311f;   /* the one small red accent */
+}
+:root[data-theme="dark"] { --shu: #e25a40; }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) { --shu: #e25a40; } }
+
+body { font-family: var(--sans); letter-spacing: -.003em; }
+.h-xl, .h-lg, h3 { font-family: var(--display); }
+.h-xl { font-weight: 700; letter-spacing: -.045em; }
+.h-lg { font-weight: 650; letter-spacing: -.035em; }
+.h-xl .muted, .h-lg span {
+  font-family: var(--accent-serif); font-style: italic; font-weight: 400; letter-spacing: -.015em;
+}
+.h-xl .muted > span { padding-right: .06em; }
+#bifrost .h-lg span { font-family: inherit; font-style: normal; font-weight: inherit; letter-spacing: inherit; }
+.btn { font-family: var(--sans); font-weight: 500; letter-spacing: -.01em; }
+
+/* =========================================================
+   A light Japanese-tech restraint: indexed sections, precise
+   hairlines, an orderly footer, one small red accent.
+   ========================================================= */
+:root { --shu: #d0311f; }
+.dot, .puck, .matrix:not(.moved) .puck::after { background: var(--shu); }
+.cad-page .dot { background: var(--blue); }
+.section { padding-top: clamp(96px, 13vw, 168px); }
+
+.eyebrow .idx {
+  font-family: var(--mono); font-size: 12px; letter-spacing: .04em; color: var(--ink);
+  margin-right: 12px; padding-right: 12px; border-right: 1px solid var(--line);
+  font-variant-numeric: tabular-nums;
+}
+.head { padding-top: 18px; border-top: 1px solid var(--line); }
+
+/* hero: text first, the logo small and to the side */
+.hero { grid-template-columns: 1fr auto; align-items: start; min-height: 0; padding: clamp(140px, 22vh, 210px) 0 72px; gap: 48px; }
+.hero-art { position: relative; width: auto; max-width: none; aspect-ratio: auto; justify-self: end; margin-top: 6px; cursor: pointer; }
+.art-mark { position: static; inset: auto; width: 120px; height: auto; }
+
+/* footer as a small, orderly site map */
+.foot { align-items: flex-start; }
+.foot-map { display: flex; gap: clamp(32px, 6vw, 72px); font-size: 14px; }
+.foot-map div { display: grid; gap: 6px; align-content: start; }
+.foot-map a { color: var(--ink); text-decoration: none; }
+.foot-map a:hover { color: var(--shu); }
+.fm-h { font-family: var(--mono); font-size: 11px; letter-spacing: .06em; text-transform: uppercase; color: var(--muted); margin-bottom: 4px; }
+.foot-note { flex-basis: 100%; padding-top: 18px; border-top: 1px solid var(--line); font-size: 13px; }
+
+@media (max-width: 900px) {
+  .hero { padding-top: 112px; gap: 20px; }
+  .hero-art { justify-self: end; max-width: none; }
+  .art-mark { width: 76px; }
+}
+@media (max-width: 640px) {
+  .hero { position: relative; grid-template-columns: 1fr; padding-top: 104px; }
+  .hero-art { position: absolute; top: 96px; right: 0; }
+  .hero-copy .tag { margin-bottom: 40px; }
+  .art-mark { width: 56px; }
+}
+
+/* =========================================================
+   Sony-style: black brand bar, square corners, flat sans
+   headings, full-width dark product bands, blue dots.
+   ========================================================= */
+:root { --shu: #168bff; }
+:root[data-theme="dark"] { --shu: #3a9bff; }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) { --shu: #3a9bff; } }
+
+/* black brand bar */
+.nav, .nav.scrolled { background: #000; color: #fff; border-bottom: 1px solid #000; }
+.nav .mark { filter: invert(1); }
+.nav .brand em { color: #9a9a9a; }
+.nav-links a { color: #b5b5b5; }
+.nav-links a:hover { color: #fff; }
+.nav-links a::after { background: #fff; }
+.nav .theme { border-color: #333; color: #fff; border-radius: 2px; }
+.nav .theme:hover { border-color: #fff; }
+.nav .btn-solid { background: #fff; color: #000; border-color: #fff; }
+.nav .btn-solid:hover { background: var(--shu); border-color: var(--shu); color: #fff; }
+
+/* square corners */
+.btn, .chips button, .theme, .matrix, .grid4, .screen, .win, .cad-banner, .soon, .product { border-radius: 2px; }
+.matrix:not(.moved) .puck::after { border-radius: 2px; }
+
+/* flat sans headings, grey second line */
+.h-xl .muted, .h-lg span {
+  font-family: inherit; font-style: normal; font-weight: inherit; letter-spacing: inherit; color: var(--muted);
+}
+.h-xl { font-weight: 700; letter-spacing: -.04em; }
+.h-lg { font-weight: 700; letter-spacing: -.03em; }
+
+/* the Bifrost product sits in a full-width black band */
+#bifrost { padding-top: clamp(96px, 13vw, 168px); }
+#bifrost .product {
+  border-radius: 0; border: 0; background: #000;
+  margin-inline: calc(50% - 50vw);
+  padding: clamp(56px, 8vw, 104px) max(var(--gutter), calc(50vw - 590px));
+}
+
+/* buttons read like Sony's: plain rectangle, arrow after */
+.btn { padding: 13px 22px; }
+.btn-ghost { border-color: var(--ink); }
+.nav .theme:hover { transform: none; }
+
+/* ---------- legal pages ---------- */
+.legal { max-width: 760px; padding: clamp(120px, 18vh, 170px) 0 0; }
+.legal .h-lg { margin-top: 4px; }
+.legal-date { color: var(--muted); font-size: 14px; margin-top: 14px; padding-bottom: 28px; border-bottom: 1px solid var(--line); }
+.legal-lede { font-size: 19px; margin-top: 32px; }
+.legal h2 { font-family: var(--display); font-size: 21px; font-weight: 650; letter-spacing: -.02em; margin-top: 44px; }
+.legal p, .legal li { color: var(--muted); margin-top: 12px; max-width: 40em; }
+.legal ul { padding-left: 20px; margin-top: 8px; }
+.legal li { margin-top: 8px; }
+.legal strong { color: var(--ink); font-weight: 600; }
+.legal a { color: var(--ink); text-decoration: underline; text-underline-offset: 3px; }
+.legal a:hover { color: var(--shu); }
+.legal code { font-family: var(--mono); font-size: .9em; color: var(--ink); }
+.foot-legal { display: flex; gap: 20px; font-size: 14px; }
+.foot-legal a { color: var(--muted); }
+.foot-legal a:hover { color: var(--ink); }

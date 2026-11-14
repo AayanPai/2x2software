@@ -50,6 +50,10 @@
     const mark = $('.art-mark', art);
     const layers = $$('.layer', art);
     let tx = 0, ty = 0, x = 0, y = 0, lastMove = -1e5, visible = true, raf;
+    let spinTo = 0, spin = 0;
+
+    // click or tap turns the mark a quarter, like turning a tile
+    art.addEventListener('click', () => { spinTo += 90; });
 
     addEventListener('pointermove', (e) => {
       if (e.pointerType !== 'mouse') return;
@@ -72,7 +76,8 @@
       }
       x += (tx - x) * 0.06;
       y += (ty - y) * 0.06;
-      mark.style.transform = `translate3d(${x * 20}px, ${y * 20}px, 0) rotate(${x * 5}deg)`;
+      spin += (spinTo - spin) * 0.08;
+      mark.style.transform = `translate3d(${x * 8}px, ${y * 8}px, 0) rotate(${x * 6 + spin}deg)`;
       layers.forEach((l) => {
         const d = +l.dataset.d;
         l.style.transform = `translate(${-x * d}px, ${-y * d}px)`;
@@ -87,12 +92,12 @@
   const chips = $$('#chips button');
   const ro = { box: $('.readout'), idea: $('#ro-idea'), verdict: $('#ro-verdict'), note: $('#ro-note') };
   const quads = {
-    hl: ['Do it this week', 'Little work, big payoff. These are rare, so we jump on them.'],
-    hh: ['Build it properly', 'A lot of work, but worth it. This is where real products come from.'],
-    ll: ['Weekend experiment', "Little work, little payoff. Fun to try, but it won't become a product."],
-    lh: ['Politely pass', 'A lot of work for little payoff. We note it down and move on.'],
+    hl: ['Do it this week', 'Little work, big payoff. Rare. We jump on it.'],
+    hh: ['Build it properly', 'A lot of work, worth every bit. This is where real products come from.'],
+    ll: ['Weekend experiment', "Little work, little payoff. Fun, but it won't become a product."],
+    lh: ['Politely pass', 'A lot of work for little payoff. We write it down and walk away.'],
   };
-  const special = { 'A gaming journal': 'A lot of work, but worth it. This is how Bifrost started.' };
+  const special = { 'A gaming journal': 'A lot of work, worth it. This is how Bifrost started.' };
   let pos = { x: 80, y: 68 }, name = 'A gaming journal', current = '', swapTimer;
 
   const quadOf = ({ x, y }) => (y >= 50 ? 'h' : 'l') + (x >= 50 ? 'h' : 'l');

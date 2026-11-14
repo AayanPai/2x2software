@@ -9,8 +9,8 @@
   <link rel="icon" href="assets/2x2-mark.png" type="image/png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css?v=8">
+  <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500;600;700&family=DM+Mono:wght@400;500&family=Source+Serif+4:ital,opsz,wght@1,8..60,400&family=Inter:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@500;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css?v=21">
   <script>
     document.documentElement.classList.add('js');
     try {
@@ -48,49 +48,36 @@
   <!-- HERO -->
   <section class="hero wrap">
     <div class="hero-copy">
-      <p class="tag"><i class="dot"></i> Independent software studio</p>
+      <p class="tag"><i class="dot"></i> A small studio. Our own software.</p>
       <h1 class="h-xl">
         <span class="line"><span>We make software</span></span>
         <span class="line muted"><span>people come back to.</span></span>
       </h1>
-      <p class="lede reveal">2×2 Software is a small studio that builds its own products. We go slowly enough to get the details right, and quickly enough to actually ship.</p>
+      <p class="lede reveal">We build what we wish existed. Sweat the details. Ship it. Then see what people do with it.</p>
       <div class="actions reveal">
         <a class="btn btn-solid" href="#bifrost">See what we've built <span aria-hidden="true">→</span></a>
         <a class="btn btn-ghost" href="#idea">How we pick ideas <span aria-hidden="true">↓</span></a>
       </div>
     </div>
 
-    <div class="hero-art" id="art" aria-hidden="true">
-      <svg class="rings" viewBox="0 0 400 400" fill="none">
-        <g class="layer" data-d="5">
-          <polygon class="ring r1" points="200,8 392,200 200,392 8,200" pathLength="1"/>
-          <circle class="orbit" r="5">
-            <animateMotion dur="16s" repeatCount="indefinite" path="M200 8 L392 200 L200 392 L8 200 Z"/>
-          </circle>
-        </g>
-        <g class="layer" data-d="10"><polygon class="ring r2" points="200,50 350,200 200,350 50,200" pathLength="1"/></g>
-        <g class="layer" data-d="16"><polygon class="ring r3" points="200,92 308,200 200,308 92,200" pathLength="1"/></g>
-      </svg>
-      <img class="art-mark" src="assets/2x2-mark.png" alt="">
-      <span class="art-label a1">PRODUCT STUDIO</span>
-      <span class="art-label a2">N° 001 — ∞</span>
-      <span class="art-label a3">BUILDING IN PUBLIC</span>
+    <div class="hero-art" id="art" title="Click to turn it">
+      <img class="art-mark" src="assets/2x2-mark.png" alt="2×2 Software logo: four diamonds, two of them with a 2 inside">
     </div>
   </section>
 
   <ul class="facts wrap reveal" aria-label="At a glance">
-    <li><span>Now</span> Bifrost, in public beta</li>
-    <li><span>Next</span> More products, slowly</li>
-    <li><span>Rule</span> Ship it, then make it better</li>
+    <li><span>Now</span> Two products in the works</li>
+    <li><span>Next</span> More. Slowly.</li>
+    <li><span>Rule</span> Ship it. Then make it better.</li>
   </ul>
 
   <!-- SORTER -->
   <section class="section wrap" id="idea">
     <div class="split">
       <div class="split-copy reveal">
-        <p class="eyebrow">[ How we pick what to build ]</p>
-        <h2 class="h-lg">Before we build anything, we ask two questions.</h2>
-        <p class="body"><strong>How much is it worth? And how much work is it?</strong> Where an idea lands on this grid decides what we do with it. Try it yourself: pick an idea below, or drag the dot anywhere on the grid.</p>
+        <p class="eyebrow"><span class="idx">01</span>How we choose</p>
+        <h2 class="h-lg">Two questions before we build anything.</h2>
+        <p class="body"><strong>Is it worth it? Is it a lot of work?</strong> Where an idea lands on this grid decides what happens next. Pick one, or drag the dot anywhere.</p>
 
         <p class="step">Pick an idea</p>
         <div class="chips" id="chips" role="radiogroup" aria-label="Example ideas">
@@ -104,7 +91,7 @@
           <p class="readout-idea" id="ro-idea">A gaming journal</p>
           <p class="step">What we'd do with it</p>
           <p class="readout-verdict" id="ro-verdict">Build it properly</p>
-          <p class="readout-note" id="ro-note">A lot of work, but worth it. This is how Bifrost started.</p>
+          <p class="readout-note" id="ro-note">A lot of work, worth it. This is how Bifrost started.</p>
         </div>
       </div>
 
@@ -130,7 +117,7 @@
       <div class="product-head">
         <img class="b-mark" src="assets/bifrost-mark.png" alt="Bifrost logo" width="64" height="64">
         <div>
-          <p class="eyebrow light">[ Product 001 · Public beta ]</p>
+          <p class="eyebrow light">Product 001 · Public beta</p>
           <h2 class="h-lg">Bifrost.<br><span>Your gaming life, in one place.</span></h2>
         </div>
       </div>
@@ -178,9 +165,9 @@
         <div class="cad-logo big"><img src="assets/cadencely-logo.webp" alt="Cadencely" loading="lazy"></div>
       </a>
       <div class="cad-feature-copy">
-        <p class="eyebrow">[ Product 002 · Coming soon ]</p>
+        <p class="eyebrow">Product 002 · Coming soon</p>
         <h2 class="h-lg">Cadencely.<br><span>Your posts, made and published on time.</span></h2>
-        <p class="body">We plan, design and publish posts and reels for your brand, on a simple subscription. Pick a plan, tell us about your business, and your feed stays active while you get on with running it.</p>
+        <p class="body">We plan, design and publish posts and reels for your brand. Pick a plan. Tell us about your business. Your feed stays alive while you run it.</p>
         <ul class="facts mini">
           <li><span>From</span> ₹159 / week</li>
           <li><span>Up to</span> 28 posts + 14 reels a month</li>
@@ -193,22 +180,22 @@
   <!-- PRINCIPLES -->
   <section class="section wrap" id="how">
     <div class="head reveal">
-      <p class="eyebrow">[ How we work ]</p>
-      <h2 class="h-lg">Four steps from idea to product.<br><span>We repeat them every time.</span></h2>
+      <p class="eyebrow"><span class="idx">02</span>How we work</p>
+      <h2 class="h-lg">Idea to product in four steps.<br><span>No skipping.</span></h2>
     </div>
     <div class="grid4">
-      <article class="cell reveal"><span class="n">Step 01</span><h3>Start with an idea</h3><p>Sometimes it's a problem we noticed. Sometimes it's just a cool idea we can't stop thinking about. Either way, it has to be worth building.</p></article>
-      <article class="cell reveal"><span class="n">Step 02</span><h3>Keep it simple</h3><p>We build the smallest version that makes the idea real, then smooth it out until it feels obvious to use.</p></article>
-      <article class="cell reveal"><span class="n">Step 03</span><h3>Ship it early</h3><p>We put it in front of real people before it's perfect. Watching them use it teaches us more than planning ever does.</p></article>
-      <article class="cell reveal"><span class="n">Step 04</span><h3>Keep improving</h3><p>We fix what's rough and build on what works. A launch isn't the finish line. It's where the real work starts.</p></article>
+      <article class="cell reveal"><span class="n">Step 01</span><h3>Start with an idea</h3><p>A problem we noticed, or a cool idea we can't shake. Either way, it has to be worth building.</p></article>
+      <article class="cell reveal"><span class="n">Step 02</span><h3>Keep it simple</h3><p>Build the smallest version that makes the idea real. Then sand it down until it feels obvious.</p></article>
+      <article class="cell reveal"><span class="n">Step 03</span><h3>Ship it early</h3><p>Put it in front of real people before it's perfect. They teach us more than planning ever will.</p></article>
+      <article class="cell reveal"><span class="n">Step 04</span><h3>Keep improving</h3><p>Fix what's rough. Build on what works. A launch isn't the finish line. It's the start.</p></article>
     </div>
   </section>
 
   <!-- NEXT -->
   <section class="section wrap" id="next">
     <div class="head reveal">
-      <p class="eyebrow">[ And this is only the start ]</p>
-      <h2 class="h-lg">Two products so far.<br><span>More on the way.</span></h2>
+      <p class="eyebrow"><span class="idx">03</span>And this is only the start</p>
+      <h2 class="h-lg">Two products so far.<br><span>More coming.</span></h2>
     </div>
     <div class="grid4 slots">
       <a class="cell slot filled reveal" href="#bifrost">
@@ -234,10 +221,15 @@
     <img class="mark" src="assets/2x2-mark.png" alt="" width="30" height="30">
     <span>2×2 <em>Software</em></span>
   </a>
-  <p>© 2026 2×2 Software. Made with care, one release at a time.</p>
+  <nav class="foot-map" aria-label="Site map">
+    <div><p class="fm-h">Products</p><a href="#bifrost">Bifrost</a><a href="cadencely.html">Cadencely</a></div>
+    <div><p class="fm-h">Studio</p><a href="#idea">How we choose</a><a href="#how">How we work</a><a href="#next">What's next</a></div>
+    <div><p class="fm-h">Legal</p><a href="terms.html">Terms of Service</a><a href="privacy.html">Privacy Policy</a></div>
+  </nav>
+  <p class="foot-note">© 2026 2×2 Software. Made with care, one release at a time.</p>
   <a class="up" href="#top">Back to top ↑</a>
 </footer>
 
-<script src="script.js?v=4"></script>
+<script src="script.js?v=6"></script>
 </body>
 </html>
